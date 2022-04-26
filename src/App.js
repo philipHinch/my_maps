@@ -1,5 +1,5 @@
 import './App.css';
-import Map, { NavigationControl } from 'react-map-gl';
+import Map, { NavigationControl, GeolocateControl } from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 //hooks
 import { useEffect, useState } from 'react';
@@ -52,6 +52,7 @@ function App() {
         mapStyle="mapbox://styles/mapbox/streets-v11"
         mapboxAccessToken={process.env.REACT_APP_ACCESS_TOKEN}>
         <NavigationControl />
+        <GeolocateControl />
       </Map >}
 
       {!geoLocation && <Map
@@ -65,6 +66,7 @@ function App() {
         mapStyle="mapbox://styles/mapbox/streets-v11"
         mapboxAccessToken={process.env.REACT_APP_ACCESS_TOKEN}>
         <NavigationControl />
+        <GeolocateControl />
       </Map >}
     </div>
   );
